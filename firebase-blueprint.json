@@ -1,0 +1,118 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and presence data",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "email": { "type": "string" },
+        "presence": { "type": "string", "enum": ["online", "offline", "listening"] },
+        "lastSeen": { "type": "string", "format": "date-time" },
+        "currentRoomId": { "type": "string" }
+      },
+      "required": ["uid", "displayName"]
+    },
+    "Song": {
+      "title": "Song",
+      "description": "Music track metadata",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "artist": { "type": "string" },
+        "album": { "type": "string" },
+        "coverUrl": { "type": "string" },
+        "audioUrl": { "type": "string" },
+        "duration": { "type": "number" },
+        "category": { "type": "string" }
+      },
+      "required": ["title", "artist", "audioUrl"]
+    },
+    "Room": {
+      "title": "Room",
+      "description": "Music listening room",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "code": { "type": "string" },
+        "hostId": { "type": "string" },
+        "currentSongId": { "type": "string" },
+        "isPlaying": { "type": "boolean" },
+        "playbackTime": { "type": "number" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "membersCount": { "type": "number" }
+      },
+      "required": ["name", "code", "hostId"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "Chat message in a room",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "roomId": { "type": "string" },
+        "userId": { "type": "string" },
+        "username": { "type": "string" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["roomId", "userId", "text"]
+    },
+    "QueueItem": {
+      "title": "QueueItem",
+      "description": "Song in a room queue",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "roomId": { "type": "string" },
+        "songId": { "type": "string" },
+        "addedBy": { "type": "string" },
+        "addedByName": { "type": "string" },
+        "votes": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["roomId", "songId", "addedBy"]
+    },
+    "Favorite": {
+      "title": "Favorite",
+      "description": "User favorite songs",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "songId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "songId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "/songs/{songId}": {
+      "schema": "Song",
+      "description": "Available music library"
+    },
+    "/rooms/{roomId}": {
+      "schema": "Room",
+      "description": "Active listening rooms"
+    },
+    "/rooms/{roomId}/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Room chat history"
+    },
+    "/rooms/{roomId}/queue/{queueItemId}": {
+      "schema": "QueueItem",
+      "description": "Room song queue"
+    },
+    "/users/{userId}/favorites/{songId}": {
+      "schema": "Favorite",
+      "description": "User liked songs"
+    }
+  }
+}

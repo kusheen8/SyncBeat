@@ -1,0 +1,6 @@
+{
+  "name": "SyncBeat",
+  "description": "A modern social music listening platform with real-time synchronized playback, collaborative rooms, and seamless music exploration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
