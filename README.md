@@ -13,7 +13,7 @@ This is an educational and collaborative music synchronization project created f
 * 🔗 Live Application: https://syncbeat-513687979801.us-west1.run.app/
 * 💻 GitHub Repository: https://github.com/kusheen8/SyncBeat
 * 📝 Medium: Add your Medium article link here
-* 💼 LinkedIn: https://www.linkedin.com/posts/kusheen-dhar-129ab22b6_buildwithai-googlecloud-gemini-share-7462728972561264640-Ilf0?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEv7ITEBGhjuM4gK69UD2FR2ONKW_I-AT-w
+* 💼 LinkedIn: https://acesse.one/9z2045d
 
 ---
 
