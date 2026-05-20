@@ -12,7 +12,7 @@ This is an educational and collaborative music synchronization project created f
 
 * 🔗 Live Application: https://syncbeat-513687979801.us-west1.run.app/
 * 💻 GitHub Repository: https://github.com/kusheen8/SyncBeat
-* 📝 Medium: Add your Medium article link here
+* 📝 Medium: https://medium.com/@storyspherecreation/building-syncbeat-a-real-time-collaborative-music-platform-with-ai-powered-recommendations-726b66284acb
 * 💼 LinkedIn: https://acesse.one/9z2045d
 
 ---
